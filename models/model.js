@@ -35,4 +35,5 @@ const workoutSchema = new Schema ({
     }
   ]
 })
-module.exports = mongo.define("Transaction", workoutSchema)
+const Workout = mongo.define("Workout", workoutSchema)
+module.exports = Workout

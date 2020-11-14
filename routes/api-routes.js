@@ -1,15 +1,13 @@
 const router = require("express").Router();
-const { db } = require("../models/model.js");
-const Workout = require("../models/model.js");
-const seeds = require("../seeders/seed.js")
+const Workout = require("../models/workout.js");
 
-Workout.create(req.body)
-.then(dbWorkout => {
-  console.log(dbWorkout)
-})
-.catch (({message})=> {
-  console.log(message)
-})
+// Workout.create({exercises: {type, name, duration, weight, reps, sets}})
+// .then(dbWorkout => {
+//   console.log(dbWorkout)
+// })
+// .catch (({message})=> {
+//   console.log(message)
+// })
 
 router.get("/api/workouts", function (req, res) {
   Workout.find()

@@ -1,14 +1,6 @@
 const router = require("express").Router();
 const Workout = require("../models/workout.js");
 
-Workout.create({workoutSeed: {}})
-.then(dbWorkout => {
-  console.log(dbWorkout)
-})
-.catch (({message})=> {
-  console.log(message)
-})
-
 router.get("/api/workouts", function (req, res) {
   Workout.find()
     .then((dbWorkout) => {

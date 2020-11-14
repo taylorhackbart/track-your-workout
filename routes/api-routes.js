@@ -47,7 +47,6 @@ router.put("/api/workouts/:id", function ({body, params}, res) {
       { exercises: body }}, 
       { new: false })
     .then((dbWorkout) => {
-      console.log(dbWorkout)
       res.json(dbWorkout);
     })
     .catch((err) => {

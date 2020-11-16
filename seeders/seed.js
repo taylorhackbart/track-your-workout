@@ -1,12 +1,6 @@
 let mongoose = require("mongoose");
 let db = require("../models");
-const seeder = require("mongoose-seed")
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout"), function(){
-  seeder.loadModels([
-    "models/workout.js"
-  ])
-}
 mongoose.connect("mongodb://localhost/workout", {
   useNewUrlParser: true,
   useFindAndModify: false

@@ -35,7 +35,7 @@ router.get("/api/workouts/range", function (req, res) {
 router.put("/api/workouts/:id", function (req, res) {
   Workout.findOneAndUpdate({_id: req.params.id}, 
     { $push: { exercises: req.body }}, 
-      { new: false })
+      { new: true })
     .then((dbWorkout) => {
       res.json(dbWorkout);
     })

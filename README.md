@@ -1,57 +1,53 @@
-# Unit 17 Nosql Homework: Workout Tracker
+# TRACK YOUR WORKOUT
 
-For this assignment, you'll create a workout tracker. You have already been provided with the front end code in the `Develop` folder. This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express.
+I created a workout tracker that allows the user to post resistance or cardio workouts and view their workouts for the week
 
-## User Story
+## Description
 
-* As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
+For this app, the user will be prompted with a welcome screen that will display the last workout they have done. This will give them the option to continue that workout, or create a new workout. If they choose to continue or create a new workout, they will be prompted to the next page, asking whether the workout will be Cardio or Resistance training. Depending on which type of workout was chosen, they user will be prompted to fill in a list of parameters for said workout. Once the workout has been added, they can go to the stats screen and see their workout progression for the current week. The live site is deployed on Heroku and can be accessed <a href="https://arcane-atoll-81567.herokuapp.com/?id=5fb441383572d60017478a7c">here. </a>
 
-## Business Context
+## Usage
 
-A consumer will reach their fitness goals more quickly when they track their workout progress.
+Upon opening this app, the homepage will display the last workout that was been logged:
 
-## Acceptance Criteria
+<img src="https://github.com/taylorhackbart/track-your-workout/blob/master/readmeimages/homepage.png">
 
-When the user loads the page, they should be given the option to create a new workout or continue with their last workout.
+They will see an option to Continue their workout, or start a new workout:
 
-The user should be able to:
+<img src="https://github.com/taylorhackbart/track-your-workout/blob/master/readmeimages/welcome.png">
 
-  * Add exercises to a previous workout plan.
+Upon pressing either button, the user will be prompted to choose the type of workout:
 
-  * Add new exercises to a new workout plan.
+<img src="https://github.com/taylorhackbart/track-your-workout/blob/master/readmeimages/addexercise.png">
 
-  * View the combined weight of multiple exercises on the `stats` page.
+Once the type has been chosen, the will be asked to input the information corresponding to the workout type chosen:
 
-To deploy an application with a MongoDB database to Heroku, you'll need to set up a MongoDB Atlas account and connect a database from there to your application. Be sure to use the following guides for support:
+Cardio:
+<img src="https://github.com/taylorhackbart/track-your-workout/blob/master/readmeimages/cardio.png">
 
-  * [Set Up MongoDB Atlas](../04-Supplemental/MongoAtlas-Setup.md)
+Resistance: 
+<img src="https://github.com/taylorhackbart/track-your-workout/blob/master/readmeimages/resistance.png">
 
-  * [Deploy with Heroku and MongoDB Atlas](../04-Supplemental/MongoAtlas-Deploy.md)
+To return to the homepage and view the last workout entered, click the "Fitness Tracker" button in the top left:
 
-## Commit Early and Often
+<img src="https://github.com/taylorhackbart/track-your-workout/blob/master/readmeimages/addworkout.png">
 
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for the following two reasons:
+Or, to view the stats that have been inputted for the week, press the "Dashboard" button:
 
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills.
+<img src="https://github.com/taylorhackbart/track-your-workout/blob/master/readmeimages/statsbutton.png">
 
-2. Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
+This will lead you to the stats page:
 
-Follow these guidelines for committing:
+<img src="https://github.com/taylorhackbart/track-your-workout/blob/master/readmeimages/statspage.png">
 
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
+## Installation
 
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
+To run this app, fork the repository and clone it into your own folder. Packages to be installed are "express", "mongoose", and "morgan". "morgan" is an optional package, but it will display the status of each route in the command line as the app is running locally, which I have found useful during the building process. Once these have been installed, run <node server> in the command line, and navigate to localhost/8080 to see the magic!
 
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
+## Technologies Used
 
-* Test your application before you commit to ensure functionality at every step in the development process.
+I primarily used Mongoose, Express, and JavaScript to develop this app.
 
-We want you to have well over 200 commits by graduation, so commit early and often!
+## Credits
 
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL to the deployed application
-
-* The URL to the GitHub repository
+My classmates were very helpful during the debugging process!

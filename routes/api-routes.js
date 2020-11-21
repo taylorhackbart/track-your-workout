@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const Workout = require("../models/workout.js");
 
+//FINDING MOST RECENT DATA ALREADY IN THE DATABASE TO DISPLAY ON HOME PAGE (most recent workout logged)
 router.get("/api/workouts", function (req, res) {
   Workout.find()
     .then((dbWorkout) => {
@@ -11,6 +12,7 @@ router.get("/api/workouts", function (req, res) {
     });
 });
 
+//POSTING A NEW WORKOUT
 router.post("/api/workouts", function (req, res) {
   Workout.create({})
     .then((dbWorkout) => {
@@ -21,6 +23,7 @@ router.post("/api/workouts", function (req, res) {
     });
 });
 
+//FIND ALL DATA AND POST TO STATS PAGE
 router.get("/api/workouts/range", function (req, res) {
   Workout.find({})
     .limit(7)
@@ -32,6 +35,7 @@ router.get("/api/workouts/range", function (req, res) {
     });
 });
 
+//CONTINUE WORKOUT AND UPDATE
 router.put("/api/workouts/:id", function (req, res) {
   Workout.findOneAndUpdate({_id: req.params.id}, 
     { $push: { exercises: req.body }}, 
@@ -44,6 +48,7 @@ router.put("/api/workouts/:id", function (req, res) {
     });
 });
 
+//NO DELETE BUTTON, BUT USEFUL FOR POTENTIAL ADD-ONS IN THE FUTURE
 router.delete("/api/workouts", function ({body}, res){
   Workout.findByIdAndDelete(body.id)
   .then(() => {

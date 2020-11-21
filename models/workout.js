@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+//WORKOUT SCHEMA FOR RESISTANCE AND CARDIO
 const workoutSchema = new Schema ({
   day: {
     type: Date,
